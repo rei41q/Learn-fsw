@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengenalan Object</title>
+  </head>
+  <body>
+    <script>
+      // object literal
+    //   const literalRudi = {
+    //     nama: "rudi",
+    //     sayHello: function () {
+    //       console.log("Hai saya karyawan");
+    //     },
+    //     sayGoodBy: function () {},
+    //   };
+      //   literalRudi.sayHello()
+
+      class Employee {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        sayHello() {
+          console.log(`Hai saya karyawan beranama : ${this.name}`);
+        }
+
+        sayGoodBy(friendName) {
+          this.friend = friendName;
+          console.log(
+            `Selamat tinggal dari : ${this.name} untuk ${this.friend}`
+          );
+        }
+      }
+
+      const rudi = new Employee("rudi", 21);
+      const bedjo = new Employee("bedjo", 23);
+      const erica = new Employee("erica", 24);
+
+
+      //   rudi.sayHello();
+      //   rudi.sayGoodBy("arya");
+      //   bedjo.sayHello();
+      //   bedjo.sayGoodBy("mikael");
+      //   erica.sayHello();
+      //   erica.sayGoodBy("valdi");
+
+      console.log(rudi);
+    //   console.log(bedjo);
+    //   console.log(erica);
+    </script>
+  </body>
+</html>
