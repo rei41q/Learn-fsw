@@ -12,5 +12,8 @@
     "Binar"
   ],
   "author": "eL Setiyawan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mathjs": "^10.4.0"
+  }
 }

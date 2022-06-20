@@ -35,3 +35,8 @@
 
 // =================== 3rd PARTY MODULE ================
 
+const math = require('mathjs');
+
+const hitung = math.add(2, 3);
+
+console.log(hitung);
