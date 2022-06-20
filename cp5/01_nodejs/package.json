@@ -1,0 +1,16 @@
+{
+  "name": "01_nodejs",
+  "version": "1.0.0",
+  "description": "Belajar Nodejs Di Binar Academy",
+  "main": "index.js",
+  "scripts": {
+    "start": "node sayHai.js"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "Binar"
+  ],
+  "author": "eL Setiyawan",
+  "license": "ISC"
+}
