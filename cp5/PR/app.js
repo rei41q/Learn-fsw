@@ -1,34 +1,44 @@
 const express = require("express");
 const app = express();
-const port = 5000;
+const port = 5001;
 
-const usersList = [];
+let usersList = [
+  {
+    id: 1,
+    name: "siswa 1",
+  },
+  {
+    id: 2,
+    name: "siswa 2",
+  },
+  {
+    id: 3,
+    name: "siswa 3",
+  },
+];
 
 app.get("/", (req, res) => {
   res.send("hello from simple server :)");
 });
 
-// api untuk mendapat semua users
 app.get("/users", (req, res) => {
   return res.json(usersList);
 });
 
-// api untuk membuat sebuah users
-app.post("/users", (req, res) => {
-    // harus bisa menerima input dari frontend
-    const newUser = req.body;
-    const newUserId = pikirkan cara ganeratenya
+app.get("/users/:userId", (req, res) => {
+  const { userId } = req.params;
 
-    usersList.push({...newUser, id: newUserId});
-    return res.json({...newUser, id: newUserId});
+  // const findIndex = usersList.findIndex(user => user.id == userId)
+  const userData = usersList.find(user => user.id == userId);
+  return res.json(userData);
 });
 
-// mendapatkan 1 user saja
-app.get("/users/:userId", (req, res) => {
-    const {userId} = req.params;
 
-    // filter userList dan return user dengan id yang sama
-    return res.json(user dengan id yang sama); 
+app.delete("/users/:userId", (req, res) => {
+  const { userId } = req.params;
+
+  usersList = usersList.filter((user) => user.id != userId);
+  return res.send("ok");
 });
 
 app.listen(port, () =>

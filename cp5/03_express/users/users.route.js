@@ -2,21 +2,21 @@ const express = require("express");
 const { getUsers } = require("./users.service");
 const userRouter = express.Router();
 
-userRouter.get("/users", getUsers);
+userRouter.get("/", getUsers);
 
-userRouter.post("/users", (req, res) => {
+userRouter.post("/", (req, res) => {
   return res.send("Hi dari userRouter");
 });
 
-userRouter.get("/users/:userId", (req, res) => {
+userRouter.get("/:userId", (req, res) => {
   return res.send("Hi dari userRouter");
 });
 
-userRouter.put("/users/:userId", (req, res) => {
+userRouter.put("/:userId", (req, res) => {
   return res.send("Hi dari userRouter");
 });
 
-userRouter.delete("/users/:userId", (req, res) => {
+userRouter.delete("/:userId", (req, res) => {
   return res.send("Hi dari userRouter");
 });
 
