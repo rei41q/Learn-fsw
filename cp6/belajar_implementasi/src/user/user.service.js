@@ -1,8 +1,8 @@
 const userRepo = require("./user.repo");
 
-const getAllUsers = async () => {
+const getAllUsers = async (q) => {
   // logika bisnis
-  return await userRepo.getAllUsers();
+  return await userRepo.getAllUsers(q);
 };
 
 const createNewUser = async (username, password) => {

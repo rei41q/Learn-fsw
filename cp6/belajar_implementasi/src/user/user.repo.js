@@ -1,7 +1,7 @@
 const { User } = require("../database/models");
 // cari semua user
-const getAllUsers = async () => {
-  return await User.findAll();
+const getAllUsers = async (q) => {
+  return await User.findAll(where username : q);
 };
 
 // bikin user baru
