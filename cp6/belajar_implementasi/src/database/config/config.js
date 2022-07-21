@@ -8,7 +8,7 @@ const config = {
     host: process.env.DB_HOST,
     dialect: "postgres",
   },
-  test: {
+  qa: {
     username: "root",
     password: null,
     database: "database_test",
