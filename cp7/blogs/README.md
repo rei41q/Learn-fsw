@@ -6,3 +6,9 @@ How To Run :
 3. npm install
 4. npx sequelize-cli db:migrate
 5. npm run dev
+
+
+==================================================
+1. Buat API registrasi dan implementasi bcrypt untuk simpan password (user.router)
+2. Buat API login, cek password dengan bcrypt, berikan JWT token dengan library jsonwebtoken (auth.router)
+3. Buat middleware untuk cek validitas JWT (middleware/token.verification)

@@ -18,4 +18,20 @@ userRouter.put("/user/:userId", tokenVerification, (req, res) => {
   return res.send(`Mau edit nama user, id ${userId}`);
 });
 
+// contoh penggunaan jwt data yang sudah tervalidasi
+// adlaah api untuk create post
+userRouter.post("/posts", tokenVerification, (req, res) => {
+  const { title, image, body } = req.body;
+  const authUser = req.auth;
+
+  const newPost = {
+    title,
+    image,
+    body,
+    user_id: authUser.id,
+  };
+
+  return res.json(newPost);
+});
+
 module.exports = userRouter;

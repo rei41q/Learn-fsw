@@ -23,5 +23,12 @@ Content-Type: application/json
 
 
 ### Edit nama user
-PUT http://localhost:8000/user/2
+POST http://localhost:8000/posts
+Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJFbCBTZXRpeWF3YW4iLCJlbWFpbCI6ImVsQGdtYWlsLmNvbSIsImlhdCI6MTY1OTYxNzIyNCwiZXhwIjoxNjU5NzAzNjI0fQ.lB2iHE_Z4NLF4BByHNFX9kn4h0dV54Z-oGg7IpGYCR4
+
+{
+    "title": "Judulnya",
+    "image": "gambarnya",
+    "body": "bodynya"
+}
