@@ -1,21 +1,21 @@
 GET http://localhost:8000   
 
-###
+### API Create user
 POST http://localhost:8000/user/registration
 Content-Type: application/json
 
 {
-    "fullname": "El Setiyawan",
-    "email": "el3@gmail.com",
+    "fullname": "El Setiyawan Dua",
+    "email": "el_dua@gmail.com",
     "password": "123456"
 }
 
 
-###
+### 
 POST http://localhost:8000/auth/login
 Content-Type: application/json
 
 {
-    "email": "el3@gmail.com",
-    "password": "1234567"
+    "email": "el@gmail.com",
+    "password": "123456"
 }
