@@ -1,4 +1,5 @@
 GET http://localhost:8000   
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJFbCBTZXRpeWF3YW4iLCJlbWFpbCI6ImVsQGdtYWlsLmNvbSIsImlhdCI6MTY1OTYxNzIyNCwiZXhwIjoxNjU5NzAzNjI0fQ.lB2iHE_Z4NLF4BByHNFX9kn4h0dV54Z-oGg7IpGYCR4
 
 ### API Create user
 POST http://localhost:8000/user/registration
@@ -19,3 +20,8 @@ Content-Type: application/json
     "email": "el@gmail.com",
     "password": "123456"
 }
+
+
+### Edit nama user
+PUT http://localhost:8000/user/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZnVsbG5hbWUiOiJFbCBTZXRpeWF3YW4iLCJlbWFpbCI6ImVsQGdtYWlsLmNvbSIsImlhdCI6MTY1OTYxNzIyNCwiZXhwIjoxNjU5NzAzNjI0fQ.lB2iHE_Z4NLF4BByHNFX9kn4h0dV54Z-oGg7IpGYCR4
