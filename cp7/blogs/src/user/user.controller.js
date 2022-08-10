@@ -1,6 +1,8 @@
+const { validationResult } = require("express-validator");
 const userService = require("./user.service");
 
 const createUser = async (req, res) => {
+  
   const { fullname, email, password } = req.body;
   try {
     const recordUser = await userService.createUser({
