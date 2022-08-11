@@ -1,11 +1,20 @@
 const { body } = require("express-validator");
 
-const registrationValidation = [
-  body("fullname").isString().isLength({ min: 2, max: 50 }),
-  body("email").isEmail(),
-  body("password").isStrongPassword(),
-];
+const registrationValidationObject = {
+  fullname: {
+    in: ["body"],
+    isString: true,
+  },
+  email: {
+    in: ["body"],
+    isEmail: true,
+  },
+  password: {
+    in: ["body"],
+    isStrongPassword: true,
+  },
+};
 
 module.exports = {
-  registrationValidation,
+  registrationValidationObject,
 };

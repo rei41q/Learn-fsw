@@ -1,4 +1,3 @@
-const { validationResult } = require("express-validator");
 const userService = require("./user.service");
 
 const createUser = async (req, res) => {
