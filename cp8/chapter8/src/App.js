@@ -1,3 +1,5 @@
+import Counting from "./Counting";
+import Counting2 from "./Counting2";
 import Education from "./Education";
 import Identity from "./Identity";
 
@@ -20,6 +22,9 @@ const App = () => {
       <Identity user={userObject} />
       <hr />
       <Education educations={educations} />
+      <hr />
+      <Counting />
+      <Counting2 />
     </>
   );
 };
