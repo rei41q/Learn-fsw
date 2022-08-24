@@ -2,12 +2,16 @@ import Education from "./Education";
 import Identity from "./Identity";
 
 const App = () => {
-
   const userObject = {
-    name: "the name",
-    address: "the address",
+    name: "El Setiyawan",
+    address: "Jogjakarta",
   };
-  
+
+  const educations = {
+    univ: "UGM",
+    jurusan: "Teknik Mesin",
+  };
+
   return (
     <>
       <div>
@@ -15,7 +19,7 @@ const App = () => {
       </div>
       <Identity user={userObject} />
       <hr />
-      <Education />
+      <Education educations={educations} />
     </>
   );
 };
