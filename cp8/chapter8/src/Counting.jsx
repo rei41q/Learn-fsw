@@ -2,13 +2,19 @@ import { Component } from "react";
 
 class Counting extends Component {
   state = {
-    count: 0,
+    count: this.props.startNumber,
     merdeka: true,
   };
 
   render() {
     return (
-      <div style={{ border: "1px solid black", padding: "10px" }}>
+      <div
+        style={{
+          border: "1px solid black",
+          padding: "10px",
+          backgroundColor: "yellow",
+        }}
+      >
         <div>Counting</div>
         <div>{this.state.count}</div>
         <div>{this.state.merdeka.toString()}</div>

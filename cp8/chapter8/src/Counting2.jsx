@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const Counting2 = () => {
-  const [count, setCount] = useState(0);
+const Counting2 = (props) => {
+  const [count, setCount] = useState(props.startNumber);
   const [merdeka, setMerdeka] = useState(true);
 
   return (

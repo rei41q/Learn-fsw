@@ -23,8 +23,8 @@ const App = () => {
       <hr />
       <Education educations={educations} />
       <hr />
-      <Counting />
-      <Counting2 />
+      <Counting startNumber={3}/>
+      <Counting2 startNumber={10}/>
     </>
   );
 };
