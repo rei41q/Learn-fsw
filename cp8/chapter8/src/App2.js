@@ -15,10 +15,9 @@ const App2 = (props) => {
 
   return (
     <div className="cobainWrapper">
-      
       {dataList.map((data) => {
         return (
-          <div style={styles.boxStyle}>
+          <div key={data} style={styles.boxStyle}>
             <p>{data}</p>
           </div>
         );
