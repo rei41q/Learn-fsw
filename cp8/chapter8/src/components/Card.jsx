@@ -1,9 +1,9 @@
 import React from "react";
 
 const Card = (props) => {
-  const { title, body} = props;
+  const { title, body, onClick } = props;
   return (
-    <div style={styles.card}>
+    <div style={styles.card} >
       <div style={styles.title}>{title}</div>
       <div>{body}</div>
     </div>

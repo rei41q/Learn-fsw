@@ -1,54 +1,43 @@
 import { Link, Route, Routes } from "react-router-dom";
 import Blogs from "./pages/Blogs/Blogs";
+import SingleBlogPost from "./pages/Blogs/SingleBlogPost";
+import Counting from "./pages/Counter/Counting";
+import Counting2 from "./pages/Counter/Counting2";
+import LayoutCounting from "./pages/Counter/LayoutCounting";
 import Education from "./pages/Education";
 import Identity from "./pages/Identity";
+import AppLayout from "./pages/Layout";
 
 const App = () => {
   return (
-    <>
-      <nav style={{ backgroundColor: "lightgreen" }}>
-        <ul style={{ listStyleType: "none" }}>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/identity">Identity</Link>
-          </li>
-          <li>
-            <Link to="/education">Education</Link>
-          </li>
-        </ul>
-      </nav>
-      <div
-        style={{
-          backgroundColor: "lightgreen",
-          padding: "10px",
-        }}
-      >
-        <div style={{ backgroundColor: "white", minHeight: "200px" }}>
-          <Routes>
-            <Route path="/" element={<div>Ini halaman home</div>} />
-            <Route
-              path="/identity"
-              element={
-                <Identity user={{ name: "El Setiyawan", address: "Jogja" }} />
-              }
+    <AppLayout>
+      <Routes>
+        <Route path="/" element={<div>Ini halaman home</div>} />
+        <Route
+          path="/identity"
+          element={
+            <Identity user={{ name: "El Setiyawan", address: "Jogja" }} />
+          }
+        />
+        <Route
+          path="/education"
+          element={
+            <Education
+              educations={{
+                univ: "UMY",
+                jurusan: "Hubungan International",
+              }}
             />
-            <Route
-              path="/education"
-              element={
-                <Education
-                  educations={{
-                    univ: "UMY",
-                    jurusan: "Hubungan International",
-                  }}
-                />
-              }
-            />
-          </Routes>
-        </div>
-      </div>
-    </>
+          }
+        />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:postId" element={<SingleBlogPost />} />
+        <Route path="/counter" element={<LayoutCounting />}>
+          <Route path="version1" element={<Counting startNumber={0} />} />
+          <Route path="version2" element={<Counting2 startNumber={0} />} />
+        </Route>
+      </Routes>
+    </AppLayout>
   );
 };
 
