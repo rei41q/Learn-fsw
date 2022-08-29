@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Button from "../../components/Button";
+import Card from "../../components/Card";
 
 const Blogs = () => {
   const [posts, setPosts] = useState([
@@ -65,39 +67,25 @@ const Blogs = () => {
     },
   ]);
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-around",
-      }}
-    >
-      {posts.map((post) => (
-        <div
-          style={{
-            border: "0.5px solid black",
-            width: "20%",
-            margin: "10px",
-            borderRadius: "10px",
-            padding: "10px",
-            boxShadow: "5px 5px #888888",
-            cursor: "pointer",
-          }}
-        >
-          <div
-            style={{
-              fontWeight: "bold",
-              marginBottom: "10px",
-              textTransform: "capitalize",
-            }}
-          >
-            {post.title}
-          </div>
-          <div>{post.body}</div>
-        </div>
-      ))}
-    </div>
+    <>
+      <div>
+        <Button title={"Register"} />
+      </div>
+      <div style={styles.wrapper}>
+        {posts.map((post) => (
+          <Card title={post.title} body={post.body} />
+        ))}
+      </div>
+    </>
   );
+};
+
+const styles = {
+  wrapper: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+  },
 };
 
 export default Blogs;
