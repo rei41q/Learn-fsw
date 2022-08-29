@@ -1,5 +1,4 @@
 import { Component } from "react";
-import Button from "./Button";
 
 class Identity extends Component {
   // kita hit ke backend dulu get user detail
@@ -12,9 +11,6 @@ class Identity extends Component {
         <div>Identity Section</div>
         <div>{this.props.user.name}</div>
         <div>{this.props.user.address}</div>
-        <div>
-          <Button text={"submit"} />
-        </div>
       </>
     );
   }
