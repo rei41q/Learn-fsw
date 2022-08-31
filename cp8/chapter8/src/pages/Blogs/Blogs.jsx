@@ -2,9 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
+import { useNavigate } from "react-router-dom";
 
 const Blogs = () => {
   const [posts, setPosts] = useState([]);
+  const navigate = useNavigate();
 
   const fetchPosts = () => {
     axios
@@ -17,6 +19,9 @@ const Blogs = () => {
       .catch((err) => console.error(err));
   };
 
+  const handleClick = (id) => {
+    navigate(`/blogs/${id}`);
+  };
   useEffect(() => {
     fetchPosts();
   }, []);
@@ -28,7 +33,12 @@ const Blogs = () => {
       </div>
       <div style={styles.wrapper}>
         {posts.map((post) => (
-          <Card key={post.id} title={post.title} body={post.body} />
+          <Card
+            key={post.id}
+            title={post.title}
+            body={post.body}
+            onClick={() => handleClick(post.id)}
+          />
         ))}
       </div>
     </>
