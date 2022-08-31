@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import Blogs from "./pages/Blogs/Blogs";
+import CreateBlog from "./pages/Blogs/CreateBlog";
 import SingleBlogPost from "./pages/Blogs/SingleBlogPost";
 import Counting from "./pages/Counter/Counting";
 import Counting2 from "./pages/Counter/Counting2";
@@ -32,6 +33,7 @@ const App = () => {
             }
           />
           <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/new" element={<CreateBlog />} />
           <Route path="/blogs/:postId" element={<SingleBlogPost />} />
           <Route path="/counter" element={<LayoutCounting />}>
             <Route path="version1" element={<Counting startNumber={0} />} />
