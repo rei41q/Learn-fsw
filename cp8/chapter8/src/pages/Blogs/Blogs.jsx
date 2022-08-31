@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
 
@@ -74,9 +73,7 @@ const Blogs = () => {
       </div>
       <div style={styles.wrapper}>
         {posts.map((post) => (
-          <Link to={`/blogs/${post.id}`}>
             <Card key={post.id} title={post.title} body={post.body} />
-          </Link>
         ))}
       </div>
     </>

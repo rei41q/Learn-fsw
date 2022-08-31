@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const AppLayout = (props) => {
   return (
@@ -27,7 +27,7 @@ const AppLayout = (props) => {
         }}
       >
         <div style={{ backgroundColor: "white", minHeight: "200px" }}>
-          {props.children}
+          <Outlet />
         </div>
       </div>
     </>
