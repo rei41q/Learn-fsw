@@ -3,14 +3,18 @@ import React, { useEffect, useState } from "react";
 import Button from "../../components/Button";
 import Card from "../../components/Card";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 const Blogs = () => {
   const [posts, setPosts] = useState([]);
+  const [cookies] = useCookies(["accessToken"]);
   const navigate = useNavigate();
 
   const fetchPosts = () => {
     axios
-      .get("https://jsonplaceholder.typicode.com/posts")
+      .get("https://jsonplaceholder.typicode.com/posts", {
+        headers: { Authorization: `Bearer ${cookies.accessToken}` },
+      })
       .then((res) => {
         const listPosts = res.data;
         console.log(listPosts);

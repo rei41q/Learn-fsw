@@ -1,4 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom";
+import Login from "./pages/auth/Login";
 import Blogs from "./pages/Blogs/Blogs";
 import CreateBlog from "./pages/Blogs/CreateBlog";
 import SingleBlogPost from "./pages/Blogs/SingleBlogPost";
@@ -8,12 +9,12 @@ import LayoutCounting from "./pages/Counter/LayoutCounting";
 import Education from "./pages/Education";
 import Identity from "./pages/Identity";
 import AppLayout from "./pages/Layout";
+import Dashboard from "./pages/User/Dashboard";
 
 const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/login" element={<div>Halaman login pertama</div>} />
         <Route path="/" element={<AppLayout />}>
           <Route
             path="/identity"
@@ -39,6 +40,8 @@ const App = () => {
             <Route path="version1" element={<Counting startNumber={0} />} />
             <Route path="version2" element={<Counting2 startNumber={0} />} />
           </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </>

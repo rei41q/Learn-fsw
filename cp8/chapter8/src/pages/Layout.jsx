@@ -21,6 +21,12 @@ const AppLayout = (props) => {
           <li>
             <Link to="/blogs/new">Create Blog</Link>
           </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
         </ul>
       </nav>
       <div
