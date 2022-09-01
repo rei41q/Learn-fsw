@@ -4,8 +4,8 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [values, setValues] = useState({});
-  const [cookies, setCookies] = useCookies(["accessToken", "userId"]);
+  const [values, setValues] = useState({ email: "emailkuadalah@gmail.com" });
+  const [cookies, setCookies] = useCookies(["accessToken", "userId", "email"]);
   const navigate = useNavigate();
 
   const handleOnChange = (e) => {
@@ -17,9 +17,10 @@ const Login = () => {
     axios
       .post("https://binar-blog-app.herokuapp.com/login", values)
       .then((res) => {
-        const respAccessToken = res.data.accessToken;
-        setCookies("accessToken", respAccessToken, { maxAge: 60000 });
-        setCookies("userId", 1, { maxAge: 60000 });
+        const { accessToken, id, email } = res.data;
+        setCookies("accessToken", accessToken, { maxAge: 60000 });
+        setCookies("userId", id, { maxAge: 60000 });
+        setCookies("email", email, { maxAge: 60000 });
         navigate("/dashboard");
       })
       .catch((err) => alert("Login lu salah coy"));
@@ -30,11 +31,11 @@ const Login = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>Email</label>
-          <input name="email" onChange={handleOnChange} />
+          <input name="email" onChange={handleOnChange} value={values.email} />
         </div>
         <div>
           <label>Password</label>
-          <input name="password" onChange={handleOnChange} />
+          <input name="password" onChange={handleOnChange} type="password" />
         </div>
         <div>
           <button type="submit">Login</button>{" "}
