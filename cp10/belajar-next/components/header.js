@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Header = () => {
@@ -5,13 +6,19 @@ const Header = () => {
     <nav className="navbar navbar-expand-lg bg-light">
       <ul className="navbar-nav mr-auto">
         <li className="nav-item">
-          <a href="/" className="nav-link">Home</a>
+          <Link href="/">
+            <a className="nav-link">Home</a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a href="/blogs" className="nav-link">Blogs</a>
+          <Link href="/blogs">
+            <a className="nav-link">Blogs</a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a href="/users" className="nav-link">Users</a>
+          <Link href="/users">
+            <a className="nav-link">Users</a>
+          </Link>
         </li>
       </ul>
     </nav>
