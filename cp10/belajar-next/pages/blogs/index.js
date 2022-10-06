@@ -1,19 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const Blogs = () => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => setPosts(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-
+const Blogs = (props) => {
+  const { postsList } = props;
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
-      {posts.map((post) => {
+      {postsList.map((post) => {
         return (
           <div
             key={post.id}
@@ -30,3 +22,15 @@ const Blogs = () => {
 };
 
 export default Blogs;
+
+export async function getStaticProps() {
+  const postsList = await axios
+    .get("https://jsonplaceholder.typicode.com/posts")
+    .then((res) => res.data)
+    .catch((err) => []);
+  return {
+    props: {
+      postsList,
+    }, // will be passed to the page component as props
+  };
+}
