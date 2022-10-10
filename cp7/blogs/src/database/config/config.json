@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "blog_db",
-    "password": "098098098",
-    "database": "blog_db",
+    "username": "tokopedia",
+    "password": "12345678",
+    "database": "tokopedia",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
