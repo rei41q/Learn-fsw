@@ -12,8 +12,13 @@ export const authSlice = createSlice({
       state.isLoggedIn = true;
       state.token = action.payload;
     },
+    // reducer to update state to loggin is false and remove jwt
+    setLogout: (state, action) => {
+      state.isLoggedIn = false;
+      state.token = "udah logout";
+    },
   },
 });
 
-export const { setLogin } = authSlice.actions;
+export const { setLogin, setLogout } = authSlice.actions;
 export default authSlice.reducer;
