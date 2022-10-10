@@ -1,5 +1,4 @@
 import axios from "axios";
-import Header from "../../components/header";
 
 const Users = (props) => {
   return (

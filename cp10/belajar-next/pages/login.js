@@ -1,10 +1,19 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+import { useDispatch, useSelector } from "react-redux";
+import { setLogin } from "../share/redux/authSlice";
 
 const Login = () => {
   const [values, setValues] = useState({});
   const [cookies, setCookies] = useCookies(["accessToken", "userId", "email"]);
+  const dispatch = useDispatch();
+
+  // user redux
+  const auth = useSelector((state) => state.auth);
+  useEffect(() => {
+    console.log(`redux auth => ${JSON.stringify(auth)}`);
+  }, [auth]);
 
   const handleOnChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -19,6 +28,8 @@ const Login = () => {
         setCookies("accessToken", accessToken, { maxAge: 60000 });
         setCookies("userId", id, { maxAge: 60000 });
         setCookies("email", email, { maxAge: 60000 });
+        // set redux to logged in
+        dispatch(setLogin(accessToken));
       })
       .catch((err) => alert("Login lu salah coy"));
   };

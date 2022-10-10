@@ -1,7 +1,19 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
+import { useCookies } from "react-cookie";
+import { useDispatch } from "react-redux";
+import { setLogin } from "../redux/authSlice";
 
 const Header = () => {
+  const [cookies] = useCookies(["accessToken"]);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (cookies.accessToken) {
+      dispatch(setLogin(cookies.accessToken));
+    }
+  }, []);
+
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <ul className="navbar-nav mr-auto">
