@@ -4,7 +4,6 @@ import Header from "../../components/header";
 const Users = (props) => {
   return (
     <div>
-      <div>Users Screen</div>
       <div>
         {props.usersList.map((user) => (
           <div key={user.id}>{user.name}</div>
