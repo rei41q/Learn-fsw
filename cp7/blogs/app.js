@@ -2,11 +2,16 @@ require("dotenv").config();
 const express = require("express");
 const authRouter = require("./src/auth/auth.route");
 const userRouter = require("./src/user/user.route");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDoc = require("./src/config/swagger");
+
 const app = express();
 
 const port = process.env.PORT || 8000;
 
 app.use(express.json());
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 app.get("/", (req, res) => {
   res.send("hello from simple server :)");

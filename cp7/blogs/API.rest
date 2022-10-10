@@ -6,9 +6,8 @@ POST http://localhost:8000/user/registration
 Content-Type: application/json
 
 {
-    "fullname": "El Setiyawan Dua",
     "email": "el_dua@gmail.com",
-    "password": "123456"
+    "password": "Password@123!"
 }
 
 
@@ -18,7 +17,7 @@ Content-Type: application/json
 
 {
     "email": "el@gmail.com",
-    "password": "123456"
+    "password": ""
 }
 
 
